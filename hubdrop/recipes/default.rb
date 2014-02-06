@@ -292,15 +292,18 @@ file "/home/jenkins/jenkins-cli.jar" do
 end
 
 # HubDrop Attributes to Environment Variables
-magic_shell_environment 'SYMFONY__HUBDROP__GITHUB_USERNAME' do
+magic_shell_environment 'SYMFONY__APP__URL' do
+  value node['hubdrop']['url']
+end
+magic_shell_environment 'SYMFONY__APP__GITHUB__USERNAME' do
   value node['hubdrop']['github']['username']
 end
-magic_shell_environment 'SYMFONY__HUBDROP__GITHUB_ORGANIZATION' do
+magic_shell_environment 'SYMFONY__APP__GITHUB__ORGANIZATION' do
   value node['hubdrop']['github']['organization']
 end
-magic_shell_environment 'SYMFONY__HUBDROP__GITHUB_AUTHORIZATION' do
+magic_shell_environment 'SYMFONY__APP__GITHUB__AUTHORIZATION' do
   value node['hubdrop']['github']['authorization']
 end
-magic_shell_environment 'SYMFONY__HUBDROP__DRUPAL_USERNAME' do
+magic_shell_environment 'SYMFONY__APP__DRUPAL__USERNAME' do
   value node['hubdrop']['drupal']['username']
 end
