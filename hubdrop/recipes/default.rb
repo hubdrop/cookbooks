@@ -199,8 +199,11 @@ else
     action :sync
     user "hubdrop"
     group "hubdrop"
-    #@TODO: notifies :run, "bash[clear_cache]"
   end
+end
+
+bash "clear_cache" do
+  command 'rm -rf /var/hubdrop/app/app/cache/*'
 end
 
 # Group can execute app.php
@@ -295,8 +298,8 @@ end
 magic_shell_environment 'SYMFONY__HUBDROP__GITHUB_ORGANIZATION' do
   value node['hubdrop']['github']['organization']
 end
-magic_shell_environment 'SYMFONY__HUBDROP__GITHUB_AUTHORIZATION_KEY' do
-  value node['hubdrop']['github']['authorization_key']
+magic_shell_environment 'SYMFONY__HUBDROP__GITHUB_AUTHORIZATION' do
+  value node['hubdrop']['github']['authorization']
 end
 magic_shell_environment 'SYMFONY__HUBDROP__DRUPAL_USERNAME' do
   value node['hubdrop']['drupal']['username']
