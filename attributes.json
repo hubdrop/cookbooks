@@ -1,5 +1,6 @@
 {
   "run_list": [ "recipe[hubdrop]" ],
+  "environment": "prod",
   "hubdrop": {
     "url": "http://hubdrop.io",
     "github": {
