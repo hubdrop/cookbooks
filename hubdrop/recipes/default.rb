@@ -202,10 +202,6 @@ else
   end
 end
 
-bash "clear_cache" do
-  command 'rm -rf /var/hubdrop/app/app/cache/*'
-end
-
 # Group can execute app.php
 file "#{node['hubdrop']['paths']['app']}/web/app.php" do
   mode "654"
