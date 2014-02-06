@@ -5,10 +5,10 @@
   RewriteEngine On
 
   # HUBDROP
-  SetEnv SYMFONY__APP__GITHUB_USERNAME <%= node['hubdrop']['github']['username'] %>
-  SetEnv SYMFONY__APP__GITHUB_ORGANIZATION <%= node['hubdrop']['github']['organization'] %>
-  SetEnv SYMFONY__APP__GITHUB_AUTHORIZATION <%= node['hubdrop']['github']['authorization_key'] %>
-  SetEnv SYMFONY__APP__DRUPAL_USERNAME <%= node['hubdrop']['drupal']['username'] %>
+  SetEnv SYMFONY__APP__GITHUB__USERNAME <%= node['hubdrop']['github']['username'] %>
+  SetEnv SYMFONY__APP__GITHUB__ORGANIZATION <%= node['hubdrop']['github']['organization'] %>
+  SetEnv SYMFONY__APP__GITHUB__AUTHORIZATION <%= node['hubdrop']['github']['authorization_key'] %>
+  SetEnv SYMFONY__APP__DRUPAL__USERNAME <%= node['hubdrop']['drupal']['username'] %>
 
 
   SetEnv SYMFONY_ENV <%= node['environment'] %>
