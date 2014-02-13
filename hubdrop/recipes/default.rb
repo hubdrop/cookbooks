@@ -297,9 +297,6 @@ end
 magic_shell_environment 'SYMFONY__APP__GITHUB__ORGANIZATION' do
   value node['hubdrop']['github']['organization']
 end
-magic_shell_environment 'SYMFONY__APP__GITHUB__AUTHORIZATION' do
-  value node['hubdrop']['github']['authorization']
-end
 magic_shell_environment 'SYMFONY__APP__DRUPAL__USERNAME' do
   value node['hubdrop']['drupal']['username']
 end

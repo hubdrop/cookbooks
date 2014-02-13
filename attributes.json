@@ -4,7 +4,6 @@
   "hubdrop": {
     "url": "http://hubdrop.io",
     "github": {
-      "authorization": "4a8c4d54758db858bc912169f3e51fafd1fff5f9",
       "organization": "drupalprojects",
       "username": "hubdrop-user"
     },
