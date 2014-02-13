@@ -1,11 +1,11 @@
 # Symfony Environment
-if node['hostname'] == 'hubdrop.io'
-  node.set['environment'] = 'prod'
+if node[:hostname] == 'hubdrop.io'
+  node.set[:environment] = 'prod'
   magic_shell_environment 'SYMFONY_ENV' do
     value 'prod'
   end
 else
-  node.set['environment'] = 'dev'
+  node.set[:environment] = 'dev'
   magic_shell_environment 'SYMFONY_ENV' do
     value 'dev'
   end
