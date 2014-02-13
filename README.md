@@ -60,7 +60,7 @@ Step 2: Run Chef Solo
 The attributes for the server are be loaded directly from GitHub.
 Once the cookbooks tar is pushed and available on GitHub.com remotely, run:
 
-    $  chef-solo -j https://raw.github.com/hubdrop/scripts/master/attributes.json -r https://github.com/hubdrop/cookbooks/raw/master/chef-solo.tar.gz 
+    $  chef-solo -j https://raw2.github.com/hubdrop/cookbooks/master/attributes.json -r https://github.com/hubdrop/cookbooks/raw/master/chef-solo.tar.gz 
 
 
 
