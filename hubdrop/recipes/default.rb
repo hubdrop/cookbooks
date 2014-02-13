@@ -135,6 +135,13 @@ directory "#{node['hubdrop']['paths']['home']}/.ssh" do
   action :create
   recursive true
 end
+file "#{node['hubdrop']['paths']['home']}/.ssh/config" do
+   content "
+   StrictHostKeyChecking no"
+   owner "hubdrop"
+   group "hubdrop"
+   mode 00755
+ end
 
 
 # Setup its ssh keys
