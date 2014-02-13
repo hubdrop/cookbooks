@@ -291,3 +291,10 @@ end
 magic_shell_environment 'SYMFONY__APP__DRUPAL__USERNAME' do
   value node['hubdrop']['drupal']['username']
 end
+
+log "[HUBDROP] Server Deployment Complete!"
+if ! File.exists?("#{node['hubdrop']['paths']['home']}/.github-authorization")
+  log "[HUBDROP] Looks like you need to configure GitHub authorization."
+  log "[HUBDROP] as hubdrop user, run `hubdrop github_auth` to generate an authorization and upload your public SSH key."
+end
+
