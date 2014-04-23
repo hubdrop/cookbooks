@@ -247,7 +247,7 @@ end
 # grant jenkins user ability to run "sudo hubdrop-jenkins-update-mirrors"
 file "/usr/bin/hubdrop-jenkins-update-mirror" do
   content "#!/bin/bash
-sudo su - hubdrop -c \"#{node['hubdrop']['paths']['app']}/app/console hubdrop:update:$1\""
+sudo su - hubdrop -c \"#{node['hubdrop']['paths']['app']}/app/console hubdrop:update $1\""
   backup false
   owner "root"
   group "root"
