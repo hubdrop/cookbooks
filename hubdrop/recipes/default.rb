@@ -27,7 +27,7 @@ include_recipe "jenkins::server"
 
 # Jenkins Jobs
 git_branch = 'master'
-jobs = ["hubdrop-jenkins-create-mirror", "hubdrop-jenkins-update-mirrors"]
+jobs = ["hubdrop-jenkins-create-mirror", "hubdrop-jenkins-update-mirror", "hubdrop-jenkins-update-mirrors"]
 jenkins_home = node['jenkins']['server']['home'];
 
 
@@ -245,9 +245,9 @@ sudo su - hubdrop -c \"#{node['hubdrop']['paths']['app']}/app/console hubdrop:mi
   mode 00755
 end
 # grant jenkins user ability to run "sudo hubdrop-jenkins-update-mirrors"
-file "/usr/bin/hubdrop-jenkins-update-mirrors" do
+file "/usr/bin/hubdrop-jenkins-update-mirror" do
   content "#!/bin/bash
-sudo su - hubdrop -c \"#{node['hubdrop']['paths']['app']}/app/console hubdrop:update:all\""
+sudo su - hubdrop -c \"#{node['hubdrop']['paths']['app']}/app/console hubdrop:update:$1\""
   backup false
   owner "root"
   group "root"
